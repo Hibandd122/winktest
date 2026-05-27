@@ -1,0 +1,24 @@
+name: Build Tweak with Theos
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        run: |
+          git clone --recursive https://github.com/theos/theos.git /opt/theos
+
+      - name: Build package
+        run: make package
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WinkVipSwitch-deb
+          path: packages/*.deb
