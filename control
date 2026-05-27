@@ -1,0 +1,9 @@
+Package: com.yourname.winkvipswitch
+Name: Wink VIP Switch
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Toggle VIP response override for Wink.
+Maintainer: You <you@example.com>
+Author: You <you@example.com>
+Section: Tweaks
+Depends: mobilesubstrate
