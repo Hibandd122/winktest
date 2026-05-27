@@ -12,10 +12,10 @@ jobs:
 
       - name: Setup Theos
         run: |
-          git clone --recursive https://github.com/theos/theos.git /opt/theos
+          git clone --recursive https://github.com/theos/theos.git ~/theos
 
       - name: Build package
-        run: make package
+        run: make package THEOS=~/theos
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
